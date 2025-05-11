@@ -7,3 +7,25 @@
 body {
 	background-color: #0a5b90;
 }
+
+section {
+	padding: 100px;
+	border-bottom: 2px dotted pink;
+}
+
+.stagger {
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+	width: 100%;
+	flex-direction: column;
+}
+
+.multi-fred-wrapper {
+	border: 2px solid pink;
+	padding: 2rem;
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+	width: 100%;
+}
