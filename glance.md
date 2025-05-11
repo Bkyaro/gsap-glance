@@ -126,3 +126,73 @@ gsap.to(".box", {
     -   `axis`: 与`grid`配合使用，设置错开方向 (`"x"` 或 `"y"`)
     -   `ease`: 应用于错开时间的缓动函数
     -   `each`: 每个元素之间的固定间隔时间（优先于`amount`）
+
+## 动画控制（Controls）
+
+GSAP 动画默认会在创建后立即自动播放。如果你需要手动控制动画的播放，可以使用以下方法。
+
+### 创建暂停的动画
+
+要创建一个初始状态为暂停的动画，可以在配置中添加 `paused: true`：
+
+```js
+gsap.to(".box", {
+	x: 200,
+	duration: 1,
+	paused: true, // 动画创建后不会自动播放
+});
+```
+
+### 常用控制方法
+
+一旦你创建了一个动画实例，你可以使用以下方法来控制它：
+
+```js
+const tween = gsap.to(".box", { x: 200, duration: 2 });
+
+// 播放控制
+tween.play(); // 播放
+tween.pause(); // 暂停
+tween.reverse(); // 反向播放
+tween.restart(); // 重新开始动画
+
+// 跳转控制
+tween.seek(1); // 跳转到动画的1秒位置
+tween.progress(0.5); // 跳转到动画的50%进度位置
+tween.time(0.8); // 设置动画的当前时间为0.8秒
+
+// 速度控制
+tween.timeScale(2); // 以2倍速播放
+tween.timeScale(0.5); // 以0.5倍速(慢速)播放
+```
+
+### 动画事件回调
+
+你可以在动画的不同阶段添加回调函数：
+
+```js
+gsap.to(".box", {
+	x: 200,
+	duration: 1,
+	onStart: () => console.log("动画开始"),
+	onUpdate: () => console.log("动画更新中"),
+	onComplete: () => console.log("动画完成"),
+	onRepeat: () => console.log("动画重复"),
+	onReverseComplete: () => console.log("反向动画完成"),
+});
+```
+
+### 获取/设置动画状态
+
+```js
+// 检查动画状态
+console.log(tween.isActive()); // 是否正在播放
+console.log(tween.progress()); // 获取当前进度(0-1)
+console.log(tween.time()); // 获取当前时间位置
+
+// 修改动画属性
+tween.duration(3); // 修改动画时长
+tween.vars.x = 300; // 修改目标值
+tween.invalidate(); // 使修改生效
+tween.restart(); // 重新开始应用新设置
+```
