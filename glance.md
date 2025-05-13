@@ -75,7 +75,7 @@ gsap.fromTo(
 
 ### 其他常用属性
 
--   `ease`: 定义动画的缓动效果（例如: `"power2.inOut"`, `"bounce.out"`, `"linear"`）。
+-   `ease`: 定义动画的缓动效果（例如: `"power2.inOut"`, `"bounce.out"`, `"linear"`）。更多高级用法请移步：https://gsap.com/docs/v3/Eases
 -   `repeat`: 动画重复的次数。`-1` 表示无限循环。
 -   `yoyo`: 如果设置为 `true`，动画会在每次重复时反向播放，产生来回效果。需要 `repeat` 属性配合。
 -   `delay`: 动画开始前的延迟时间（秒）。
