@@ -69,7 +69,7 @@ const callbackInfo = document.querySelector('.callback-info');
 // 显示回调信息的函数
 function showCallbackInfo(message) {
 	callbackInfo.textContent = message;
-	
+
 	// 2秒后清除消息
 	setTimeout(() => {
 		if (callbackInfo.textContent === message) {
@@ -147,4 +147,22 @@ document.getElementById("speed-normal-btn").addEventListener("click", () => {
 	fredAnimation.timeScale(1); // 恢复正常速度
 	showCallbackInfo("播放速度: 1x (正常)");
 });
+
+// Timeline
+// 连续调用
+gsap.timeline().to(".fred-timeline-a", {
+	x: 400,
+	duration: 3,
+}).to(".fred-timeline-b", {
+	x: 400,
+	duration: 2,
+	ease: "back"
+}).to(".fred-timeline-c", {
+	xPercent: 100,
+	duration: 1
+});
+
+
+
+
 

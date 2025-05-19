@@ -86,3 +86,11 @@ button {
 button:hover {
 	background-color: #ff1493;
 }
+
+.timeline-fred-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: space-between;
+	width: 100%;
+}
